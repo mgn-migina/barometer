@@ -85,3 +85,35 @@ function scrollMenu(is_scroll) {
         menuObj.removeClass('scroll');
     }
 }
+// =========================
+// 画像クリックで拡大
+// =========================
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.getElementById("close");
+
+document.querySelectorAll(".zoom-image").forEach(function(img){
+
+    img.addEventListener("click", function(){
+
+        modal.style.display = "block";
+        modalImg.src = this.src;
+
+    });
+
+});
+
+closeBtn.addEventListener("click", function(){
+
+    modal.style.display = "none";
+
+});
+
+modal.addEventListener("click", function(e){
+
+    if(e.target === modal){
+        modal.style.display = "none";
+    }
+
+});
