@@ -835,4 +835,13 @@ hr::before {
         margin-bottom: 5px;
     }
 }
+h1 {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
 /* ----- ▲ レイアウト　ここまで ▲ ----- */
