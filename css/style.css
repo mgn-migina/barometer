@@ -845,20 +845,21 @@ h1 {
     }
 }
 
-.gallery{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
-    margin-top:20px;
+.gallery {
+    display: flex;
+    flex-direction: column; /* 💡画像を縦並びにする設定 */
+    align-items: center;    /* 💡画像を中央に寄せる */
+    gap: 25px;              /* 画像と画像の間のすき間 */
+    margin-top: 20px;
 }
 
-.gallery img{
-    width:220px;
-    max-width:100%;
-    border-radius:8px;
-    cursor:pointer;
-    transition:0.2s;
+.gallery img {
+    width: 100% !important;  /* 画面の横幅いっぱいに広げる（最大幅まで） */
+    max-width: 280px;        /* 💡大きくなりすぎないように制限（お好みで 300px などに変えてもOK） */
+    height: auto !important; /* 💡これで絶対に縦に伸びなくなります！ */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .gallery img:hover{
@@ -867,36 +868,43 @@ h1 {
 
 /* 画像拡大 */
 
-.zoom-image{
-    cursor:pointer;
-}
-
 #imageModal{
     display:none;
     position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    justify-content:center;
+    align-items:center;
     z-index:9999;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.85);
+}
+
+.popup-content{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    max-width:90%;
+    text-align:center;
 }
 
 #modalImage{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    max-width:90%;
-    max-height:90%;
+    max-width:100%;
+    max-height:70vh;
+    display:block;
+    margin:0 auto;
+}
+
+#caption{
+    margin-top:15px;
+    font-size:14px;
+    color:#555;
 }
 
 #close{
     position:absolute;
     top:20px;
     right:30px;
-    color:white;
     font-size:40px;
+    color:white;
     cursor:pointer;
 }
 /* ----- ▲ レイアウト　ここまで ▲ ----- */

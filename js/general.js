@@ -89,31 +89,29 @@ function scrollMenu(is_scroll) {
 // 画像クリックで拡大
 // =========================
 
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImage");
-const closeBtn = document.getElementById("close");
+window.addEventListener("DOMContentLoaded", function() {
+    // 画面のHTMLがすべて読み込まれてから、以下の処理を実行する
 
-document.querySelectorAll(".zoom-image").forEach(function(img){
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const caption = document.getElementById("caption");
+    const closeBtn = document.getElementById("close");
 
-    img.addEventListener("click", function(){
-
-        modal.style.display = "block";
-        modalImg.src = this.src;
-
+    document.querySelectorAll(".zoom-image").forEach(function(img){
+        img.addEventListener("click", function(){
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+            caption.textContent = this.dataset.caption;
+        });
     });
 
-});
-
-closeBtn.addEventListener("click", function(){
-
-    modal.style.display = "none";
-
-});
-
-modal.addEventListener("click", function(e){
-
-    if(e.target === modal){
+    closeBtn.onclick = function(){
         modal.style.display = "none";
-    }
+    };
 
+    modal.onclick = function(e){
+        if(e.target === modal){
+            modal.style.display = "none";
+        }
+    };
 });
