@@ -907,4 +907,19 @@ h1 {
     color:white;
     cursor:pointer;
 }
+
+
+
+/* 文章ボタン */
+summary{
+    cursor:pointer;
+    background:#f4f4f4;
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:10px 15px;
+}
+
+summary:hover{
+    background:#e8e8e8;
+}
 /* ----- ▲ レイアウト　ここまで ▲ ----- */
